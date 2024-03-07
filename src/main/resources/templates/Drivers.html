@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{/fragments/head::headMain(Drivers)}"></head>
+<body>
+    <header th:replace="~{/fragments/header :: headerMain}"></header>
+    <main>
+        <h1>Drivers</h1>
+        <section>
+            <article th:each="driver : ${drivers}">
+                <span hidden th:text="${driver.idDriver}"></span>
+                <span th:text = "${driver.nameDriver} +' '+ ${driver.lastName}"></span>
+            </article>
+        </section>
+    </main>
+    <footer th:replace="~{fragments/footer :: footerMain}"></footer>
+</body>
+</html>
