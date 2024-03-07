@@ -1,6 +1,7 @@
 package com.gaort.formulaOne.Driver;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gaort.formulaOne.Country.Country;
 import com.gaort.formulaOne.RegisterTeamDriver.RegisterTeamDriver;
 import jakarta.persistence.*;
@@ -24,7 +25,7 @@ import java.util.List;
     @Column(length = 45)
     private String lastName;
 
-    @JsonIgnore
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(
@@ -32,6 +33,8 @@ import java.util.List;
             foreignKey = @ForeignKey(name="FK_Country_idCountry"))
     private Country driverCountry;
 
+
+    @JsonManagedReference
     @OneToMany(mappedBy = "registerTeamDriver_driver")
     private List<RegisterTeamDriver> registerTeamDrivers;
 }

@@ -3,9 +3,7 @@ package com.gaort.formulaOne.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/teams")
@@ -17,6 +15,13 @@ public class TeamController {
     @GetMapping("/")
     public String showInterfaceTeam(Model model){
         return "teams";
+    }
+
+    @PostMapping("/add")
+    public @ResponseBody String createNewTeam(
+            @RequestParam String name,
+            @RequestParam int idCountry){
+        return teamService.addNewTeam(name, idCountry);
     }
 
 }

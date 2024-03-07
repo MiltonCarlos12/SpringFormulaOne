@@ -1,20 +1,22 @@
 package com.gaort.formulaOne.RegisterTeamDriver;
 
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.gaort.formulaOne.Driver.Driver;
 import com.gaort.formulaOne.Team.Team;
 import jakarta.persistence.*;
-import org.hibernate.type.descriptor.jdbc.TinyIntJdbcType;
+import lombok.Data;
 
 
 @Entity
-public class RegisterTeamDriver {
+@Data public class RegisterTeamDriver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idRegisterTeamDriver;
 
-    private TinyIntJdbcType numberDriver;
-
+    private int numberDriver;
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(
             name = "driver_idDriver",
@@ -22,6 +24,7 @@ public class RegisterTeamDriver {
     )
     private Driver registerTeamDriver_driver;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(
             name = "team_idTeam",
