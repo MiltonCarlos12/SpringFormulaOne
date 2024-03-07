@@ -1,0 +1,10 @@
+ul {
+    width: 40vw;
+    display:flex;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}

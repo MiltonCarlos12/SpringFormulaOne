@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{ /fragments/head :: headMain('Main page')}"></head>
+<body>
+    <header th:replace="~{/fragments/header :: headerMain }"></header>
+    <main>
+        <h2>This is a new content</h2>
+        <h3>And this is a new one</h3>
+        <a href="/drivers/">Drivers</a>
+        <a href="/countries/">Countries</a>
+        <a href="/teams/">Teams</a>
+    </main>
+    <footer th:replace="~{/fragments/footer :: footerMain}"></footer>
+</body>
+</html>
