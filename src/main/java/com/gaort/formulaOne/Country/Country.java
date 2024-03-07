@@ -3,6 +3,7 @@ package com.gaort.formulaOne.Country;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.gaort.formulaOne.Driver.Driver;
+import com.gaort.formulaOne.GrandPrix.GrandPrix;
 import com.gaort.formulaOne.Team.Team;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -26,11 +27,15 @@ import java.util.List;
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Driver> drivers;
 
-
     @JsonManagedReference
     @OneToMany(mappedBy = "teamCountry")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Team> teams;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "countryGrandPrix")
+    @OnDelete(action=OnDeleteAction.CASCADE)
+    private List<GrandPrix> grandPrixes;
 
 }
 
