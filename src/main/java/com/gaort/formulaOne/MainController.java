@@ -11,6 +11,6 @@ public class MainController {
 
     @GetMapping("/")
     public String showIndex(Model model){
-        return "index";
+        return "index.html";
     }
 }
