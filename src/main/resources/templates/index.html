@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="~{ /fragments/head :: headMain('Main page')}"></head>
+<head th:replace="~{ @{/fragments/head} :: headMain('Main page')}"></head>
 <body>
-    <header th:replace="~{/fragments/header :: headerMain }"></header>
+    <header th:replace="~{@{/fragments/header} :: headerMain }"></header>
     <main>
         <h2>This is a new content</h2>
         <h3>And this is a new one</h3>
     </main>
-    <footer th:replace="~{/fragments/footer :: footerMain}"></footer>
+    <footer th:replace="~{@{/fragments/footer} :: footerMain}"></footer>
 </body>
 </html>
