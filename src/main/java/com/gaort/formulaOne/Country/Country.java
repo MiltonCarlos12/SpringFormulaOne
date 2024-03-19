@@ -16,7 +16,7 @@ import java.util.List;
 @Data public class Country{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCountry;
 
     @Column(length = 25)

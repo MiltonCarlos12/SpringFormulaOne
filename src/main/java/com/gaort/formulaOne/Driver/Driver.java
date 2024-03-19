@@ -15,7 +15,7 @@ import java.util.List;
 @Data public class Driver {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Getter Integer IdDriver;
 
     @Getter @Setter

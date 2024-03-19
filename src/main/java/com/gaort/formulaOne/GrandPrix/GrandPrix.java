@@ -9,7 +9,7 @@ import lombok.Data;
 @Data public class GrandPrix {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGrandPrix;
 
     @Column(length = 45)

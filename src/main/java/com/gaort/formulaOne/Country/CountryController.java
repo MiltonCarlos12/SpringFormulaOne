@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/countries")
-public class CoutryController {
+public class CountryController {
 
     @Autowired
     private CountryService countryService;
@@ -17,6 +17,11 @@ public class CoutryController {
         return "countries";
     }
 
+    /**
+     * Creating a new country with the name only.
+     * @param nameCountry: String with the name of the new country.
+     * @return String: It returns a string confirmation massage.
+     */
     @PostMapping("/add")
     public @ResponseBody String addNewCountry(@RequestParam String nameCountry){
         Country country = new Country();

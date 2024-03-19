@@ -12,7 +12,7 @@ import lombok.Data;
 @Data public class RegisterTeamDriver {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRegisterTeamDriver;
 
     private int numberDriver;

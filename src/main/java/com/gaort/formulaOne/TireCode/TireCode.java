@@ -12,7 +12,7 @@ import java.util.List;
 @Data public class TireCode {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTireCode;
 
     @Column(length = 2)

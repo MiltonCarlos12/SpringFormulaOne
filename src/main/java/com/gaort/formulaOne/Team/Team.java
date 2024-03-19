@@ -17,7 +17,7 @@ import java.util.List;
 @Data public class Team {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTeam;
 
     @Column(length = 45)
