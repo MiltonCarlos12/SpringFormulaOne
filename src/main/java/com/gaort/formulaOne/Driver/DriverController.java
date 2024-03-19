@@ -32,18 +32,18 @@ public class DriverController {
 
     /**
      * Function to add a new driver through Post method.
-     * @param firstName
+     * @param nameDriver
      * @param lastName
      * @return ResponseBody
      */
     @PostMapping(path = "/add")
     public @ResponseBody String addNewDriver(
-            @RequestParam String firstName,
+            @RequestParam String nameDriver,
             @RequestParam String lastName,
-            @RequestParam int idCountry){
-        Country count = countryService.getById(idCountry);
+            @RequestParam int driverCountry){
+        Country count = countryService.getById(driverCountry);
         Driver d = new Driver();
-        d.setNameDriver(firstName);
+        d.setNameDriver(nameDriver);
         d.setLastName(lastName);
         d.setDriverCountry(count);
         return IDriverService.createNewDriver(d);

@@ -19,8 +19,9 @@ public class RegisterTeamDriverControlller {
     public @ResponseBody String addNewTeamDriver(
             @RequestParam int number,
             @RequestParam int idDriver,
-            @RequestParam int idTeam
+            @RequestParam int idTeam,
+            @RequestParam int idSeason
     ) {
-        return registerTeamDriverService.createNewRelationship(number, idDriver, idTeam);
+        return registerTeamDriverService.createNewRelationship(number, idDriver, idTeam,idSeason);
     }
 }

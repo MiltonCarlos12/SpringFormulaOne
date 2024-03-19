@@ -3,6 +3,7 @@ package com.gaort.formulaOne.RegisterTeamDriver;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.gaort.formulaOne.Driver.Driver;
+import com.gaort.formulaOne.Season.Season;
 import com.gaort.formulaOne.Team.Team;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,12 +25,21 @@ import lombok.Data;
     )
     private Driver registerTeamDriver_driver;
 
-    @JsonBackReference
+    @JsonBackReference(value = "registerTeamDriver_team")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(
             name = "team_idTeam",
             foreignKey = @ForeignKey(name = "fk_registerTeamDriver_idTeam")
     )
     private Team registerTeamDriver_team;
+
+    @JsonBackReference(value = "registerTeamDriver_season")
+    @ManyToOne
+    @JoinColumn(
+            name = "season_idSeason",
+            referencedColumnName = "idSeason",
+            foreignKey = @ForeignKey(name = "fk_registerTeamDriver_season")
+    )
+    private Season registerTeamDriver_season;
 
 }
